@@ -24,10 +24,13 @@
        
        form.onsubmit=(e)=>{
         e.preventDefault()
-        delateof();
+         delateof()
         let cont = inp.value.toLowerCase()
         data(cont)
-        delateof();
+    
+        if (document.querySelector("img")) {
+        document.querySelectorAll("img").forEach((img) => { img.remove() })
+      }
   
         async function data(cont){
            let asd =  await fetch('https://flagcdn.com/en/codes.json')
@@ -41,19 +44,20 @@
                 photo.src ='https://flagcdn.com/256x192/' + i + ".png"
                 document.querySelector(".fleg").appendChild(photo)
             }
-            else{
-                
-            }
+           
            }
           
            }
-           function delateof(){
-            let delate=( document.querySelector(".fleg").children) 
-            if(delate.length > 0){
-                delate.forEach((f1)=>{f1.remove()})
-            }
+          
 
         }
+        function delateof(){
+            let delate= Array.from(document.querySelector(".fleg").children)
+            console.log(delate)
+            if(delate.length > 0){
+                delate.forEach((f1)=>{f1.remove()})
+            }}
+           
     
        
     
@@ -75,7 +79,7 @@
     
     
     
-    }
+    
 
 
 

@@ -25,14 +25,12 @@
        let inp = document.querySelector("input")
        
        form.onsubmit=(e)=>{
-        e.preventDefault()
-         delateof()
+        e.preventDefault();
+         delateof();
         let cont = inp.value.toLowerCase()
         data(cont)
     
-        if (document.querySelector("img")) {
-        document.querySelectorAll("img").forEach((img) => { img.remove() })
-      }
+       
   
         async function data(cont){
            let asd =  await fetch('https://flagcdn.com/en/codes.json')

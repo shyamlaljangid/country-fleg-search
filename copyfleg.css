@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items:center ;
+    height: 100vh;
+    background-color: antiquewhite;
+}
+.box{
+    border: 1px solid;
+    width: 40%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.inp{
+    padding: 10px;
+    width: 300px;
+    margin: 5px;
+}
+button
+{
+    width: 100px;
+    padding: 10px 20px;
+    margin: 5px;
+}
+.fleg{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    width: 30%;
+    height: 50%;
+    padding-left: 20px;
+    border: 2px solid ;
+}

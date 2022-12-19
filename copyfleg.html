@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fleg copy </title>
+    <link rel="stylesheet" href="copyfleg.css">
+   
+</head>
+<body>
+    <div id="wrapper">
+          <div class="box">
+            <form action="">
+                <input type="text" placeholder="Enter your Country" class="inp">
+                <button type="submit">search</button>
+            </form>
+          </div>
+          <div class="fleg"></div>
+    </div>
+    <script>
+       let form = document.querySelector("form")
+       let inp = document.querySelector("input")
+       
+       form.onsubmit=(e)=>{
+        e.preventDefault()
+        delateof();
+        let cont = inp.value.toLowerCase()
+        data(cont)
+        delateof();
+  
+        async function data(cont){
+           let asd =  await fetch('https://flagcdn.com/en/codes.json')
+           let country = await asd.json()
+           console.log(country)
+
+           for(let i in country){
+            country[i]  =country[i].toLowerCase()
+            if(country[i] === cont){
+                let photo =document.createElement("img")
+                photo.src ='https://flagcdn.com/256x192/' + i + ".png"
+                document.querySelector(".fleg").appendChild(photo)
+            }
+            else{
+                
+            }
+           }
+          
+           }
+           function delateof(){
+            let delate=( document.querySelector(".fleg").children) 
+            if(delate.length > 0){
+                delate.forEach((f1)=>{f1.remove()})
+            }
+
+        }
+    
+       
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+          
+    //     fetch('https://dummyjson.com/products')
+    //     .then(response =>response.json())
+    //     .then(result => data(result))
+
+    //     function data(asd){
+    //         let products = asd.products
+    //         console.log(products)
+    //         products.forEach((product) =>{
+    //             let pas = document.createElement("div")
+    //             pas.classList.add("add")
+            
+    //             let photo = document.createElement("img")
+    //             photo.src =product.thumbnail 
+    //             pas.appendChild(photo)
+    //             let heading = document.createElement("h2")
+    //          heading.innerHTML =product.title 
+    //             pas.appendChild(heading)
+
+    //             document.querySelector("#wrapper").appendChild(pas)
+    //         })
+    //     }
+    //    }
+    </script>
+</body>
+</html>
